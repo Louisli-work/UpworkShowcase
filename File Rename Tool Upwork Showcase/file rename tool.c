@@ -123,6 +123,7 @@ void fileRename(const char* path, int num)
 			SYSTEMTIME systemTime;
 			FileTimeToSystemTime(&locatFileTime, &systemTime);
 
+			snprintf(newName, MAX_PATH, "%d-%02d-%02d_%02d-%02d-%02d_", systemTime.wYear, systemTime.wMonth, systemTime.wDay, systemTime.wHour, systemTime.wMinute, systemTime.wSecond);
 
 			strncat(newName, findFileData.cFileName, MAX_PATH);
 
